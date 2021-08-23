@@ -1,8 +1,8 @@
 FROM python:2.7
 LABEL maintainer="Rithvik Ayithapu"
 
+COPY . /app
 WORKDIR /app
-COPY techtrends ./
 RUN pip install -r ./requirements.txt
 RUN python ./init_db.py
 
