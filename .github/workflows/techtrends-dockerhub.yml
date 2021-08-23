@@ -8,7 +8,7 @@ on:
     branches: [ main ]
 
 # jobs of the workflow run
-job:
+jobs:
   # using a single job called build
   build:
     # the job will run on ubuntu
