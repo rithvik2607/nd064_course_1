@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: techtrends
+  name: techtrends
+  namespace: sandbox
+## Defining desired config for the Deployment resource
+spec:
+  replicas: 1
+  ## Identify pods managed by the deployment using the selector
+  selector:
+    matchLabels:
+      app: techtrends
+  ## Set the config for the pods
+  template:
+    metadata:
+      labels:
+        app: techtrends
+    ## Define the desired state of the pod config
+    spec:
+      containers:
+        ## Specify the image to be executed inside the container
+      - image: rithvik2607/techtrends:latest
+        imagePullPolicy: IfNotPresent
+        name: techtrends
+        ## Expose the port on which the container is listening
+        ports:
+        - containerPort: 3111
+          protocol: TCP
+        ## Define the rules for liveness probes
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 3111
+        ## Define the rules for readiness probes
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: 3111
+        ## Set resource requests and limits for the application
+        resources:
+        ## Resource request to gaurantee the desired amount
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+        ## Resource limits to ensure application is not consuming more resources than desired
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
