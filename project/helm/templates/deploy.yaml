@@ -2,10 +2,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: techtrends
-  namespace: sandbox
+  namespace: {{ .Values.namespace.name }}
 ## Defining desired config for the Deployment resource
 spec:
-  replicas: 1
+  replicas: {{ .Values.replicaCount }}
   ## Identify pods managed by the deployment using the selector
   selector:
     matchLabels:
@@ -19,30 +19,30 @@ spec:
     spec:
       containers:
         ## Specify the image to be executed inside the container
-      - image: rithvik2607/techtrends:latest
-        imagePullPolicy: IfNotPresent
+      - image: {{ .Values.image.repository }}/{{ .Values.image.tag }}
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
         name: techtrends
         ## Expose the port on which the container is listening
         ports:
-        - containerPort: 3111
+        - containerPort: {{ .Values.containerPort }}
           protocol: TCP
         ## Define the rules for liveness probes
         livenessProbe:
           httpGet:
-            path: /healthz
-            port: 3111
+            path: {{ .Values.livenessProbe.httpGet.path }}
+            port: {{ .Values.containerPort }}
         ## Define the rules for readiness probes
         readinessProbe:
           httpGet:
-            path: /healthz
-            port: 3111
+            path: {{ .Values.readinessProbe.httpGet.path }}
+            port: {{ .Values.containerPort }}
         ## Set resource requests and limits for the application
         resources:
         ## Resource request to gaurantee the desired amount
           requests:
-            memory: "64Mi"
-            cpu: "250m"
+            memory: {{ .Values.resources.requests.memory }}
+            cpu: {{ .Values.resources.requests.cpu }}
         ## Resource limits to ensure application is not consuming more resources than desired
           limits:
-            memory: "128Mi"
-            cpu: "500m"
+            memory: {{ .Values.resources.requests.memory }}
+            cpu: {{ .Values.resources.requests.cpu }}

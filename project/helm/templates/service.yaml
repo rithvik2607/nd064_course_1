@@ -2,15 +2,15 @@ apiVersion: v1
 kind: Service
 metadata:
   name: techtrends
-  namespace: sandbox
+  namespace: {{ .Values.namespace.name }}
 ## Define the config for the Service resource
 spec:
   ## Define ports the service should serve on
   ports:
-  - port: 4111
-    protocol: TCP
-    targetPort: 3111
+  - port: {{ .Values.service.port }}
+    protocol: {{ .Values.service.protocol }}
+    targetPort: {{ .Values.service.targetPort }}
   selector:
     app: techtrends
   ## Define the Service type
-  type: ClusterIP
+  type: {{ .Values.service.type }}
