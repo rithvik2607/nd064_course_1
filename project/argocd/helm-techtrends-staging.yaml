@@ -9,8 +9,7 @@ spec:
   project: default
   source:
     helm:
-      valueFiles:
-      - values-staging.yaml
+      valueFiles: ['values-staging.yaml']
     path: project/helm
     repoURL: https://github.com/rithvik2607/nd064_course_1
     targetRevision: HEAD
