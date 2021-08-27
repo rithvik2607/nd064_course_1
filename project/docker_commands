@@ -13,25 +13,21 @@ docker logs -t quizzical_hopper
 
 ## Logs from the container running the TechTrends application
 # TODO: paste logs from the Docker container 
-2021-08-22T18:50:47.231228000Z  * Serving Flask app "app" (lazy loading)
-2021-08-22T18:50:47.231289800Z  * Environment: production
-2021-08-22T18:50:47.231300100Z    WARNING: This is a development server. Do not use it in a production deployment.
-2021-08-22T18:50:47.231312800Z    Use a production WSGI server instead.
-2021-08-22T18:50:47.231496200Z  * Debug mode: off
-2021-08-22T18:50:47.232403800Z INFO:werkzeug: * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
-2021-08-22T18:50:52.155376500Z INFO:werkzeug:172.17.0.1 - - [22/Aug/2021 18:50:52] "GET / HTTP/1.1" 200 -
-2021-08-22T18:50:53.077080900Z INFO:werkzeug:172.17.0.1 - - [22/Aug/2021 18:50:53] "GET /static/css/main.css HTTP/1.1" 200 -
-2021-08-22T18:50:53.810134900Z INFO:werkzeug:172.17.0.1 - - [22/Aug/2021 18:50:53] "GET /favicon.ico HTTP/1.1" 404 -
-2021-08-22T18:50:57.163949500Z INFO:app:About Us page retrieved!
-2021-08-22T18:50:57.172086100Z INFO:werkzeug:172.17.0.1 - - [22/Aug/2021 18:50:57] "GET /about HTTP/1.1" 200 -
-2021-08-22T18:50:58.888751000Z INFO:werkzeug:172.17.0.1 - - [22/Aug/2021 18:50:58] "GET / HTTP/1.1" 200 -
-2021-08-22T18:50:59.863604000Z INFO:app:Article 2020 CNCF Annual Report retrieved!
-2021-08-22T18:50:59.880601800Z INFO:werkzeug:172.17.0.1 - - [22/Aug/2021 18:50:59] "GET /1 HTTP/1.1" 200 -
-2021-08-22T18:51:00.889958100Z INFO:werkzeug:172.17.0.1 - - [22/Aug/2021 18:51:00] "GET / HTTP/1.1" 200 -
-2021-08-22T18:51:01.637723300Z INFO:app:Article KubeCon + CloudNativeCon 2021 retrieved!
-2021-08-22T18:51:01.640163300Z INFO:werkzeug:172.17.0.1 - - [22/Aug/2021 18:51:01] "GET /2 HTTP/1.1" 200 -
-2021-08-22T18:51:02.402725000Z INFO:werkzeug:172.17.0.1 - - [22/Aug/2021 18:51:02] "GET / HTTP/1.1" 200 -
-2021-08-22T18:51:03.580362200Z INFO:werkzeug:172.17.0.1 - - [22/Aug/2021 18:51:03] "GET /create HTTP/1.1" 200 -
-2021-08-22T18:51:09.798333800Z INFO:app:Article Hello created!
-2021-08-22T18:51:09.799807800Z INFO:werkzeug:172.17.0.1 - - [22/Aug/2021 18:51:09] "POST /create HTTP/1.1" 302 -
-2021-08-22T18:51:09.813986600Z INFO:werkzeug:172.17.0.1 - - [22/Aug/2021 18:51:09] "GET / HTTP/1.1" 200 -
+INFO:2021-08-27 21:39:58,497 -  * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+INFO:2021-08-27 21:39:58,497 -  * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+INFO:2021-08-27 21:40:16,950 - 127.0.0.1 - - [27/Aug/2021 21:40:16] "GET / HTTP/1.1" 200 -
+INFO:2021-08-27 21:40:16,950 - 127.0.0.1 - - [27/Aug/2021 21:40:16] "GET / HTTP/1.1" 200 -
+INFO:2021-08-27 21:40:17,844 - 127.0.0.1 - - [27/Aug/2021 21:40:17] "GET /static/css/main.css HTTP/1.1" 200 -
+INFO:2021-08-27 21:40:17,844 - 127.0.0.1 - - [27/Aug/2021 21:40:17] "GET /static/css/main.css HTTP/1.1" 200 -
+INFO:2021-08-27 21:40:23,267 - Article 2020 CNCF Annual Report retrieved!
+INFO:2021-08-27 21:40:23,267 - Article 2020 CNCF Annual Report retrieved!
+INFO:2021-08-27 21:40:23,278 - 127.0.0.1 - - [27/Aug/2021 21:40:23] "GET /1 HTTP/1.1" 200 -
+INFO:2021-08-27 21:40:23,278 - 127.0.0.1 - - [27/Aug/2021 21:40:23] "GET /1 HTTP/1.1" 200 -
+INFO:2021-08-27 21:40:40,145 - 127.0.0.1 - - [27/Aug/2021 21:40:40] "GET / HTTP/1.1" 200 -
+INFO:2021-08-27 21:40:40,145 - 127.0.0.1 - - [27/Aug/2021 21:40:40] "GET / HTTP/1.1" 200 -
+ERROR:2021-08-27 21:40:42,897 - A non existing article is accessed and 404 is returned
+ERROR:2021-08-27 21:40:42,897 - A non existing article is accessed and 404 is returned      
+INFO:2021-08-27 21:40:42,908 - 127.0.0.1 - - [27/Aug/2021 21:40:42] "GET /10 HTTP/1.1" 404 -
+INFO:2021-08-27 21:40:42,908 - 127.0.0.1 - - [27/Aug/2021 21:40:42] "GET /10 HTTP/1.1" 404 -
+INFO:2021-08-27 21:40:47,441 - 127.0.0.1 - - [27/Aug/2021 21:40:47] "GET / HTTP/1.1" 200 -
+INFO:2021-08-27 21:40:47,441 - 127.0.0.1 - - [27/Aug/2021 21:40:47] "GET / HTTP/1.1" 200 -
